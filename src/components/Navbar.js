@@ -2,23 +2,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import React from 'react';
+import CartWidget from './CartWidget';
 
 export default function AppNavbar() {
-    return (
-      <div>
+  return (
+    <div>
     <Container>
-   <Navbar bg="danger" expand="lg">
-    
+    <Navbar bg="danger" expand="lg">    
     <Navbar.Brand href="#home">VICKY GAMES</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    <Nav.Link href="#home">Home</Nav.Link>
+    <Nav.Link href="#features">Features</Nav.Link>
+    <Nav.Link href="#pricing">Pricing</Nav.Link>
     </Nav>
+    <Nav><CartWidget/></Nav>
+    </Navbar> 
     
-  </Navbar> 
-
-      </Container>
-      </div>
+    </Container>
+    </div>
     );
-}
+  }
+  
