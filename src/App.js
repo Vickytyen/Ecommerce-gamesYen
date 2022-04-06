@@ -5,10 +5,10 @@ import AppNavbar from './components/Navbar.js';
 import ItemListContainer from './components/ItemListContainer';
 
 function App() {
-  return (<>
+  return <>
   <AppNavbar/>
   <ItemListContainer greeting="Hola! Soy el itemListContainer. Aca se muestran proximamente los productos"/>
-  </>);
+  </>;
 }
 
 export default App;
