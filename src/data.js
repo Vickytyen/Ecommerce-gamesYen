@@ -1,10 +1,11 @@
-const data = [
+export const data = [
   {
     id: 1,
     tittle: "Mario Kart 8",
     price: "$3000",
     img: {
       url: "https://m.media-amazon.com/images/I/51uY0eZg+IS.jpg ",
+      stock: 100,
     },
   },
   {
@@ -13,6 +14,7 @@ const data = [
     price: "$3000",
     img: {
       url: "https://m.media-amazon.com/images/I/81cHm50auZL._SY550_.jpg ",
+      stock: 100,
     },
   },
   {
@@ -21,6 +23,7 @@ const data = [
     price: "$3000",
     img: {
       url: "https://http2.mlstatic.com/D_NQ_NP_883268-MLA40928711983_022020-O.webp ",
+      stock: 100,
     },
   },
   {
@@ -29,6 +32,7 @@ const data = [
     price: "$3000",
     img: {
       url: "https://m.media-amazon.com/images/I/61wcjVPx4sL._SL1000_.jpg",
+    stock: 100,
     },
   },
 ];
@@ -40,3 +44,8 @@ export const getData = () => {
     }, 2000)
   })
 }
+
+
+
+
+

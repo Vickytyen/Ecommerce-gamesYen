@@ -3,11 +3,15 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppNavbar from './components/Navbar.js';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
-function App() {
+function App() {  
+
   return <>
   <AppNavbar/>
-  <ItemListContainer greeting="Hola! Soy el itemListContainer. Aca se muestran proximamente los productos"/>
+  <ItemListContainer  //greeting="Hola! Soy el itemListContainer. Aca se muestran proximamente los productos" 
+  />
+  <ItemDetailContainer/>
   </>;
 }
 
