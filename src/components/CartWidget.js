@@ -10,7 +10,7 @@ const CartWidget = () => {
         width="16"
         height="16"
         fill="currentColor"
-        class="bi bi-cart3"
+        className="bi bi-cart3"
         viewBox="0 0 16 16"
       >
         

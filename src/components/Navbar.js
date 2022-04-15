@@ -3,23 +3,41 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import React from 'react';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 export default function AppNavbar() {
   return (
     <div>
-    <Container>
-    <Navbar bg="danger" expand="lg">    
-    <Navbar.Brand href="#home">VICKY GAMES</Navbar.Brand>
-    <Nav className="me-auto">
-    <Nav.Link href="#home">Home</Nav.Link>
-    <Nav.Link href="#features">Features</Nav.Link>
-    <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    <Nav><CartWidget/></Nav>
-    </Navbar> 
-    
-    </Container>
+      <Container>
+        <Navbar bg="danger" expand="lg">
+          <Navbar.Brand href="#home">
+            <Link to="/">VICKY GAMES</Link>
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <ul>
+              <Nav.Link href="#home">
+                <li>
+                  <Link to="/Nintendo">Nintendo</Link>
+                </li>
+              </Nav.Link>
+              <Nav.Link href="#features">
+                <li>
+                  <Link to="/Playstation">Playstation</Link>
+                </li>
+              </Nav.Link>
+              <Nav.Link href="#pricing">
+                <li>
+                  <Link to="/Xbox">Xbox</Link>
+                </li>
+              </Nav.Link>
+            </ul>
+          </Nav>
+          <Nav>
+            <CartWidget />
+          </Nav>
+        </Navbar>
+      </Container>
     </div>
-    );
+  );
   }
   
