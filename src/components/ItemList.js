@@ -6,6 +6,11 @@ export default function ItemList({items}) {
     return (
       <Container>
         <div>
+          {/*{<div>
+            productos.map((product) => (
+              <Item key={product.id} {...product} />
+            ))}
+          </div>*/}
           {items.length > 0 ? (
             items.map((item) => (
               <Item

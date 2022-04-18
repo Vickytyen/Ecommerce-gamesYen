@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../data";
 import ItemList from  './ItemList';
-import { useParams } from "react-router-dom";
-import { customFetch } from "../customFetch";
+//import { useParams } from "react-router-dom";
+//import { customFetch } from "../customFetch";
 import ItemCount from "./ItemCount";
 
-const ItemListContainer = (items) => {
+const ItemListContainer = (/*items*/) => {
   const [games, setGames] = useState([]);
-  const { idCategory } = useParams();
+  //const { idCategory } = useParams();
 
     useEffect (() => {
       async function pedirDatos() {
@@ -17,7 +17,7 @@ const ItemListContainer = (items) => {
       pedirDatos();
     }, [])
 //Buscar la manera de refactorizarlo
-    useEffect(() => {
+    /*useEffect(() => {
       if (idCategory === undefined){
       customFetch(2000, items)
         .then(result => setGames(result))
@@ -28,7 +28,7 @@ const ItemListContainer = (items) => {
         .catch(err => console.log(err))
       }
       console.log(idCategory);
-    }, [idCategory]);
+    }, [idCategory]);*/
 
      const onAdd = (qty) => {
        alert("Seleccionó " + qty + " items");

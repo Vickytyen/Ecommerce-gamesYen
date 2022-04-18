@@ -6,18 +6,21 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    const [dato, setDato] = useState({});
-    const {idItem} = useParams ();
+  const [games, setGames] = useState({});
+  const { idItem } = useParams();
 
-    useEffect(() => {
-        customFetch(2000, data.find(item => item.id === idItem))
-            .then(result => setDato(result))
-            .catch(err => console.log(err)
-    )}, [idItem]);
-
-    return (
-        <ItemDetail item={dato}/>
+  useEffect(() => {
+    //customFetch(2000, data[3])
+      customFetch(
+      2000,
+      data.find((item) => item.id == idItem)
     )
+      .then((result) => setGames(result))
+      .catch((err) => console.log(err));
+  //}, []);
+   }, [idItem]);
+
+  return <ItemDetail item={games} />;
 }
 
 export default ItemDetailContainer;

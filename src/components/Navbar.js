@@ -5,7 +5,8 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 
-export default function AppNavbar() {
+export default function  AppNavbar() {
+
   return (
     <div>
       <Container>
@@ -17,17 +18,17 @@ export default function AppNavbar() {
             <ul>
               <Nav.Link href="#home">
                 <li>
-                  <Link to="/Nintendo">Nintendo</Link>
+                  <Link to="/category/Nintendo">Nintendo</Link>
                 </li>
               </Nav.Link>
               <Nav.Link href="#features">
                 <li>
-                  <Link to="/Playstation">Playstation</Link>
+                  <Link to="/category/Playstation">Playstation</Link>
                 </li>
               </Nav.Link>
               <Nav.Link href="#pricing">
                 <li>
-                  <Link to="/Xbox">Xbox</Link>
+                  <Link to="/category/Xbox">Xbox</Link>
                 </li>
               </Nav.Link>
             </ul>
