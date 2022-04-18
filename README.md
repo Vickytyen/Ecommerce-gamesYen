@@ -1,3 +1,26 @@
+# Proyecto React Js :rocket:
+E-commerce de video juegos en desarrollo en curso de React Js en CODER HOUSE.
+
+## Dependencias utilizadas :hammer_and_wrench:
+_React 17.0.2_
+
+_React-dom 17.0.2_
+
+_React-router-dom 6.3.0_
+
+## Estilos utilizados :crayon:
+_Bootstrap 5.1.3_
+
+_React-bootstrap 2.2.2_
+
+_reactstrap 9.0.1"_
+
+## Copyright 	:alien:
+_No poseo la autoría de las imagenes utilizadas para este proyecto. Este sitio web está subido a github pages, solo es de uso académico y sin fines de lucro._
+
+## Muchas Gracias por su atención! 
+_Victoria Yen_
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
