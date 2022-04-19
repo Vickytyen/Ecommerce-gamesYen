@@ -1,10 +1,16 @@
 import ItemCount from "./ItemCount";
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import CheckOut from "./CheckOut";
+
 
 const ItemDetail = ({item}) => {
+  const [itemCount, setItemCount] = useState(0);
     
   const onAdd = (qty) => {
     alert("Seleccionó " + qty + " items");
+    setItemCount(qty);
   }
 
   return (
@@ -20,7 +26,21 @@ const ItemDetail = ({item}) => {
               </CardSubtitle>
               <CardText>{item.price}</CardText>
               <CardText>{item.stock}</CardText>
-              <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+              {/*<ItemCount stock={item.stock} initial={1} onAdd={onAdd} />*/}
+              <div>
+                {itemCount === 0 ? (
+                  <ItemCount
+                    stock={item.stock}
+                    initial={itemCount}
+                    onAdd={onAdd}
+                  />
+                ) : (
+                    <CheckOut/>                
+                )}
+                <Link to={"/"}>
+                  <Button>Volver al Inicio</Button>
+                </Link>
+              </div>
             </CardBody>
           </Card>
         </div>

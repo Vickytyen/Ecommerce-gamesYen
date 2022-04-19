@@ -1,19 +1,19 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, CardText, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
-export default function Item({id, tittle, price, img, stock, description}) {
+export default function Item({id, tittle, price, img, stock, brand, }) {
     return (
       <div>
         <Card key={id}>
           <CardImg alt="Card image cap" src={img} top width="100%" />
           <CardBody>
             <CardTitle tag="h5">{tittle}</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              {description}
-            </CardSubtitle>
             <CardText>{price}</CardText>
             <CardText>{stock} unidades</CardText>
-            <Button>Lo quiero!</Button>
+            <Link to={`/item/${id}`}>
+              <Button>+ info</Button>
+            </Link>
           </CardBody>
         </Card>
       </div>
