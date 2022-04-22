@@ -1,16 +1,19 @@
 import ItemCount from "./ItemCount";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import CheckOut from "./CheckOut";
+import { CartContext } from "./CartContext";
 
 
 const ItemDetail = ({item}) => {
   const [itemCount, setItemCount] = useState(0);
+  const test = useContext(CartContext);
     
   const onAdd = (qty) => {
     alert("Seleccionó " + qty + " items");
     setItemCount(qty);
+    test.addToCart(item);
   }
 
   return (
@@ -26,7 +29,6 @@ const ItemDetail = ({item}) => {
               </CardSubtitle>
               <CardText>{item.price}</CardText>
               <CardText>{item.stock}</CardText>
-              {/*<ItemCount stock={item.stock} initial={1} onAdd={onAdd} />*/}
               <div>
                 {itemCount === 0 ? (
                   <ItemCount

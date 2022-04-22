@@ -24,7 +24,7 @@ export default function ItemList({items}) {
               />
             ))
           ) : (
-            <p>Espere...</p>
+            <p>Espere...</p> //meterle un spinner
           )}
         </div>
       </Container>

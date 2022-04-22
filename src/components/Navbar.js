@@ -38,7 +38,9 @@ export default function  AppNavbar() {
             <li>Iniciar Sesion</li>
             <li>Registrarse</li>
             <li>
-              <CartWidget />
+              <Link to='/Cart'>
+                <CartWidget />
+              </Link>
             </li>
           </ul>
           <div>

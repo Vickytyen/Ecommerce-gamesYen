@@ -2,7 +2,7 @@ import React from "react";
 import Badge from "react-bootstrap/Badge";
 
 
-const CartWidget = () => {
+const CartWidget = () => {  
   return (
     <div>
       <svg

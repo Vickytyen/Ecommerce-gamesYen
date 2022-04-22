@@ -3,7 +3,6 @@ import { getData } from "../data";
 import ItemList from  './ItemList';
 //import { useParams } from "react-router-dom";
 //import { customFetch } from "../customFetch";
-import ItemCount from "./ItemCount";
 
 const ItemListContainer = (/*items*/) => {
   const [games, setGames] = useState([]);
@@ -30,14 +29,9 @@ const ItemListContainer = (/*items*/) => {
       console.log(idCategory);
     }, [idCategory]);*/
 
-     const onAdd = (qty) => {
-       alert("Seleccionó " + qty + " items");
-     };
-
   return (
     <>
       <ItemList items={games} />
-      <ItemCount stock={100} initial={1} onAdd={onAdd} />
     </>
   );
 

@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, } from 'react';
+
 
 const ItemCount = ({ stock = 0, initial = 1, onAdd}) => {
-    const [count, setCount] = useState(0); //Hook
+    const [count, setCount] = useState(0); 
+
     
     const increment = () => {
         if (count < stock){
@@ -17,6 +19,7 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd}) => {
     
     return (
         <>
+    
         <button onClick={increment}>+</button>
         {count}
         <button onClick={decrement}>-</button>
