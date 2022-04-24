@@ -11,20 +11,34 @@ function Cart() {
   return (
     <>
       <h1>Tu carrito</h1>
-      {test.cartList.lenght > 0 && (
-        <div>
-          {test.cartList.map((item) => (
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={item[0].img[0]} />
-              <Card.Body>
-                <Card.Title>{item[0].name}</Card.Title>
-                <Card.Text>{item[0].price}</Card.Text>
-                <Button variant="danger">Borrar</Button>
-              </Card.Body>
-            </Card>
-          ))}
-        </div>
+      {test.cartList.length > 0 ? (
+        test.cartList.map(item => (
+          <Card style={{ width: "18rem" }} key={item.idItem}>
+            <Card.Img variant="top" src={item.imgItem} />
+            <Card.Body>
+              <Card.Title>{item.nameItem}</Card.Title>
+              <Card.Text>{item.priceItem} precio unitario</Card.Text>
+              <Card.Text>{item.qtyItem}item(s)</Card.Text>
+              <Button
+                variant="danger"
+                type="filled"
+                onClick={() => test.deleteItem(item.idItem)}>Borrar</Button>
+            </Card.Body>
+          </Card>
+        ))
+      ) : (
+        <></>
       )}
+
+      <div>
+        {test.cartList.length > 0 ? (
+          <Button type="filled" onClick={test.removeList}>
+            BORRAR TODO
+          </Button>
+        ) : (
+          <Card.Text>No hay productos seleccionados</Card.Text>
+        )}
+      </div>
       <Link to={"/"}>
         <Button>Volver al Inicio</Button>
       </Link>

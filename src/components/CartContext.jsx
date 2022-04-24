@@ -6,16 +6,17 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const addToCart = (item, qty) => {
-        let found = cartList.find(product => product.idItem === item.id);
+        let found = cartList.find((item) => item.idItem === item.id);
         if ( found === undefined) {
             setCartList([
                 ...cartList,
                 {
                     idItem: item.id,
-                    imgItem: item.image[0],
+                    imgItem: item.img[0],
                     nameItem: item.name,
-                    costItem: item.cost,
+                    priceItem: item.price,
                     qtyItem: qty
+
                 }
             ]);
         } else {
@@ -23,18 +24,21 @@ const CartContextProvider = ({ children }) => {
         }
     }
     
+        const removeList = () => {
+        setCartList([]);
+    }
 
     const deleteItem = (id) => {
-        let result = cartList.filter(item => item.idItem != id);
+        let result = cartList.filter(item => item.idItem !== id);
         setCartList(result);
     }
 
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, deleteItem}}>
+        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem}}>
             { children }
         </CartContext.Provider>
     );
-}
+    }
 
 export default CartContextProvider;

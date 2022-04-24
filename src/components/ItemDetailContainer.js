@@ -10,14 +10,12 @@ const ItemDetailContainer = () => {
   const { idItem } = useParams();
 
   useEffect(() => {
-    //customFetch(2000, data[3])
       customFetch(
       2000,
-      data.find((item) => item.id == idItem)
-    )
+      data.find((item) => item.id === parseInt(idItem)))
       .then((result) => setGames(result))
-      .catch((err) => console.log(err));
-  //}, []);
+      .catch(err => console.log(err));
+
    }, [idItem]);
 
   return <ItemDetail item={games} />;

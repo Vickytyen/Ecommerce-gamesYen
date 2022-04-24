@@ -6,11 +6,6 @@ export default function ItemList({items}) {
     return (
       <Container>
         <div>
-          {/*{<div>
-            productos.map((product) => (
-              <Item key={product.id} {...product} />
-            ))}
-          </div>*/}
           {items.length > 0 ? (
             items.map((item) => (
               <Item
@@ -18,7 +13,7 @@ export default function ItemList({items}) {
                 id={item.id}
                 title={item.tittle}
                 price={item.price}
-                img={item.img}
+                img={item.img[0]}
                 stock={item.stock}
                 description={item.description}
               />
