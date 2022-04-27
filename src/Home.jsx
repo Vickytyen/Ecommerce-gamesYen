@@ -9,7 +9,7 @@ import  CartContextProvider from "./components/CartContext";
 
 function Home() {
   return (
-    <CartContextProvider value={"un string"}> 
+    <CartContextProvider> 
       <BrowserRouter>
         <AppNavBar />
            <Routes>

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardImg, CardBody, CardTitle, CardText, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-export default function Item({id, tittle, price, img, stock, brand, }) {
+export default function Item({id, tittle, price, img, stock, }) {
     return (
       <div>
         <Card key={id}>

@@ -12,7 +12,7 @@ function Cart() {
     <>
       <h1>Tu carrito</h1>
       {test.cartList.length > 0 ? (
-        test.cartList.map(item => (
+        test.cartList.map((item) => (
           <Card style={{ width: "18rem" }} key={item.idItem}>
             <Card.Img variant="top" src={item.imgItem} />
             <Card.Body>
@@ -22,7 +22,11 @@ function Cart() {
               <Button
                 variant="danger"
                 type="filled"
-                onClick={() => test.deleteItem(item.idItem)}>Borrar</Button>
+                onClick={() => test.deleteItem(item.idItem)}
+              >
+                Borrar
+              </Button>
+              <div> $ {test.calcTotalPerItem(item.idItem)}</div>
             </Card.Body>
           </Card>
         ))
@@ -39,6 +43,24 @@ function Cart() {
           <Card.Text>No hay productos seleccionados</Card.Text>
         )}
       </div>
+
+      <div>
+        {test.cartList.length > 0 && (
+          <div>
+            <h1>Tu Compra</h1>
+            <h2>Subtotal</h2>
+            <p>{test.calcSubTotal()}</p>
+            <h3>Impuestos</h3>
+            <p>{test.calcTaxes()}</p>
+            <h3>Descuento</h3>
+            <p>{-test.calcTaxes()}</p>
+            <h2>Total</h2>
+            <p>{test.calcTotal()}</p>
+            <button>Finalizar Compra</button>
+          </div>
+        )}
+      </div>
+
       <Link to={"/"}>
         <Button>Volver al Inicio</Button>
       </Link>
