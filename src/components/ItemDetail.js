@@ -21,13 +21,13 @@ const ItemDetail = ({item}) => {
       {item && item.img ? (
         <div>
           <Card key={item.id}>
-            <CardImg alt="Card image cap" src={item.img[0]} top width="100%" />
+            <CardImg alt="Card image cap" src={item.img} top width="100%" />
             <CardBody>
               <CardTitle tag="h5">{item.tittle}</CardTitle>
               <CardSubtitle className="mb-2 text-muted" tag="h6">
                 {item.description}
               </CardSubtitle>
-              <CardText>{item.price}</CardText>
+              <CardText>${item.price}</CardText>
               <CardText>{item.stock}unidades</CardText>
               <div>
                 {itemCount === 0 ? (

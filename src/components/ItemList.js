@@ -13,7 +13,7 @@ export default function ItemList({items}) {
                 id={item.id}
                 title={item.tittle}
                 price={item.price}
-                img={item.img[0]}
+                img={item.img}
                 stock={item.stock}
                 description={item.description}
               />
