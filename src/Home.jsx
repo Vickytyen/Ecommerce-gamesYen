@@ -4,7 +4,7 @@ import AppNavBar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer"; 
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
-import  CartContextProvider from "./components/CartContext";
+import  CartContextProvider from "./context/CartContext";
 
 
 function Home() {

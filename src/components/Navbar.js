@@ -16,17 +16,17 @@ export default function  AppNavbar() {
         </Navbar.Brand>
         <Nav className="me-auto">
           <ul>
-            <Nav.Link href="#home">
+            <Nav.Link>
               <li>
                 <Link to="/category/Nintendo">Nintendo</Link>
               </li>
             </Nav.Link>
-            <Nav.Link href="#features">
+            <Nav.Link>
               <li>
                 <Link to="/category/Playstation">Playstation</Link>
               </li>
             </Nav.Link>
-            <Nav.Link href="#pricing">
+            <Nav.Link>
               <li>
                 <Link to="/category/Xbox">Xbox</Link>
               </li>

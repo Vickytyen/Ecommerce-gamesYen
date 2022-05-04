@@ -6,21 +6,28 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const addToCart = (item, qty) => {
+        //console.log(item, qty, 'ADDTOCART') 
         let found = cartList.find((item) => item.idItem === item.id);
         if ( found === undefined) {
             setCartList([
                 ...cartList,
                 {
                     idItem: item.id,
-                    imgItem: item.img[0],
+                    imgItem: item.img,
+
                     nameItem: item.name,
                     priceItem: item.price,
                     qtyItem: qty
 
-                }
-            ]);
-        } else {
+                },
+                
+            ])
+         //   console.log(cartList, qty, 'CARTLIST') 
+            } else {
             found.qtyItem += qty;
+                        setCartList([
+                ...cartList
+            ]);
         }
     }
     
@@ -33,7 +40,7 @@ const CartContextProvider = ({ children }) => {
         setCartList(result);
     }
 
-    const calcTotalPerItem = (idItem) => {
+    const calcTotalPerItem = (idItem) => { console.log(idItem, 'calc item')
         let index = cartList.map(item => item.idItem).indexOf(idItem);
         return cartList[index].costItem * cartList[index].qtyItem;
     }

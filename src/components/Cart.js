@@ -2,12 +2,57 @@ import { Link } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import { Card } from 'react-bootstrap'
 import { useContext } from 'react';
-import { CartContext } from './CartContext';
-
+import { CartContext } from '../context/CartContext';
+import { collection, doc, setDoc, updateDoc, serverTimestamp, increment, } from 'firebase/firestore'
+import db from '../utils/firebaseConfig'
 
 function Cart() {
   const test = useContext(CartContext);
-  
+
+      const createNewOrder = () => {        
+        const itemsFordb = test.cartList.map((item) => ({
+          id: item.idItem,
+          title: item.nameItem,
+          price: item.priceItem,
+          qty: item.qtyItem,
+        }));
+
+        test.cartList.forEach(async (item) => { // Cuando se confirma la compra, se actualiza el stock con updateDoc
+          const itemRef = doc(db, "products", item.idItem);
+          await updateDoc(itemRef, {
+            stock: increment(-item.qtyItem), // funcion para modificar el stock desde firebase
+          });
+        });
+
+        let order = {
+           buyer: {
+            name: "Tita Elgato",
+            email: "tita@meow.com",
+            phone: "1112411124123456",
+          },
+          total: test.calcTotal(),
+          items: itemsFordb,
+          date: serverTimestamp(),
+        };
+
+        const createOrderFb = async () => {
+          const newOrderRef = doc(collection(db, "order")); //crearlo en firebase, ver clase
+          await setDoc(newOrderRef, order);
+          return newOrderRef;
+        };
+
+        createOrderFb()
+          .then(result => {
+            alert(
+              "Tu pedido ha sido creado. Por favor anote el ID.\n\n\nID del pedido: " +
+                result.id +
+                "\n\n"
+            );
+          })
+          .catch((err) => console.log(err));
+
+        };
+        
   return (
     <>
       <h1>Tu carrito</h1>
@@ -22,10 +67,7 @@ function Cart() {
               <Button
                 variant="danger"
                 type="filled"
-                onClick={() => test.deleteItem(item.idItem)}
-              >
-                Borrar
-              </Button>
+                onClick={() => test.deleteItem(item.idItem)}>Delete</Button>
               <div> $ {test.calcTotalPerItem(item.idItem)}</div>
             </Card.Body>
           </Card>
@@ -37,10 +79,10 @@ function Cart() {
       <div>
         {test.cartList.length > 0 ? (
           <Button type="filled" onClick={test.removeList}>
-            BORRAR TODO
+            Delete All
           </Button>
         ) : (
-          <Card.Text>No hay productos seleccionados</Card.Text>
+          <Card.Text>Your Cart is empty</Card.Text>
         )}
       </div>
 
@@ -56,13 +98,13 @@ function Cart() {
             <p>{-test.calcTaxes()}</p>
             <h2>Total</h2>
             <p>{test.calcTotal()}</p>
-            <button>Finalizar Compra</button>
+            <button onClick={createNewOrder}>Checkout</button>
           </div>
         )}
       </div>
 
       <Link to={"/"}>
-        <Button>Volver al Inicio</Button>
+        <Button>Back to Menu</Button>
       </Link>
     </>
   );

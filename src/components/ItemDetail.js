@@ -3,7 +3,7 @@ import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } fr
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import CheckOut from "./CheckOut";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../context/CartContext";
 
 
 const ItemDetail = ({item}) => {
@@ -40,7 +40,7 @@ const ItemDetail = ({item}) => {
                     <CheckOut/>                
                 )}
                 <Link to={"/"}>
-                  <Button>Volver al Inicio</Button>
+                  <Button>Home</Button>
                 </Link>
               </div>
             </CardBody>
