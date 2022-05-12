@@ -6,13 +6,13 @@ export default function Item({id, tittle, price, img, stock, }) {
     return (
       <div>
         <Card key={id}>
-          <CardImg alt="Card image cap" src={img} top width="100%" />
+          <CardImg alt="Card image cap" src={img} top width="100%" className="ItemSize" />
           <CardBody>
             <CardTitle tag="h5">{tittle}</CardTitle>
             <CardText>${price}</CardText>
             <CardText>{stock} unidades</CardText>
             <Link to={`/item/${id}`}>
-              <Button>+ info</Button>
+              <Button color="danger">+ info</Button>
             </Link>
           </CardBody>
         </Card>

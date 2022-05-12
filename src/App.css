@@ -36,3 +36,69 @@
     transform: rotate(360deg);
   }
 }
+
+/*CSS*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*APP CSS*/
+
+.imgContainer {
+  background-image: url("./img/fondo2.jpg");
+  background-size: contain;
+  padding: 1rem;
+}
+
+/*Navbar CSS*/
+.logo {
+  width: 150px;
+  border-radius: 100%;
+  margin-left: 20px ;
+
+}
+
+/*itemlist CSS*/
+
+.ItemListDiv {
+  padding: 10px;
+  display: flex ;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/*item CSS*/
+
+.ItemSize {
+    width: 200px;
+    height: 300px;
+}
+
+.ItemdetailSize {
+    width: 500px;
+    margin-top: 50px ;
+    margin-left: 500px ;
+}
+
+/*ItemCount CSS*/
+
+myButton {
+  border-radius: 100% ;
+  width: 50px;
+  height: 50px;
+  color: red;
+
+}
+
+/*Navbar CSS*/
+li {
+text-decoration-line: none;
+list-style: none;
+}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function CheckOut() {
   return (
     <>
-      <Link to="/Cart">
+      <Link to="/Cart" >
         <Button color="primary" outline>
           Check Out
         </Button>

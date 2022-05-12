@@ -19,7 +19,7 @@ const ItemDetail = ({item}) => {
   return (
     <>
       {item && item.img ? (
-        <div>
+        <div className="ItemdetailSize">
           <Card key={item.id}>
             <CardImg alt="Card image cap" src={item.img} top width="100%" />
             <CardBody>
@@ -31,13 +31,13 @@ const ItemDetail = ({item}) => {
               <CardText>{item.stock}unidades</CardText>
               <div>
                 {itemCount === 0 ? (
-                  <ItemCount
+                  <ItemCount 
                     stock={item.stock}
                     initial={itemCount}
                     onAdd={onAdd}
                   />
                 ) : (
-                    <CheckOut/>                
+                  <CheckOut />
                 )}
                 <Link to={"/"}>
                   <Button>Home</Button>

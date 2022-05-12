@@ -10,11 +10,10 @@ const CartContextProvider = ({ children }) => {
         let found = cartList.find((item) => item.idItem === item.id);
         if ( found === undefined) {
             setCartList([
-                ...cartList,
+                ...cartList, //spread operator
                 {
                     idItem: item.id,
                     imgItem: item.img,
-
                     nameItem: item.name,
                     priceItem: item.price,
                     qtyItem: qty
@@ -25,13 +24,10 @@ const CartContextProvider = ({ children }) => {
          //   console.log(cartList, qty, 'CARTLIST') 
             } else {
             found.qtyItem += qty;
-                        setCartList([
-                ...cartList
-            ]);
         }
     }
     
-        const removeList = () => {
+    const removeList = () => {
         setCartList([]);
     }
 
@@ -42,7 +38,7 @@ const CartContextProvider = ({ children }) => {
 
     const calcTotalPerItem = (idItem) => { console.log(idItem, 'calc item')
         let index = cartList.map(item => item.idItem).indexOf(idItem);
-        return cartList[index].costItem * cartList[index].qtyItem;
+        return cartList[index].priceItem * cartList[index].qtyItem;
     }
 
     const calcSubTotal = () => {
@@ -65,7 +61,7 @@ const CartContextProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, calcTotalPerItem, calcSubTotal, calcTaxes, calcTotal, calcItemsQty}}>
+        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, calcTotalPerItem, calcSubTotal, calcTaxes, calcTotal, calcItemsQty}}> 
             { children }
         </CartContext.Provider>
     );

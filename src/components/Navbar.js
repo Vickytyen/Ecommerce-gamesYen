@@ -5,6 +5,7 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import  SearchForm  from './SearchForm'
+import logo from '../img/logo.jpg'
 
 export default function  AppNavbar() {
 
@@ -12,7 +13,14 @@ export default function  AppNavbar() {
     <Container>
       <Navbar bg="danger" expand="lg">
         <Navbar.Brand href="#home">
-          <Link to="/">VICKY GAMES</Link>
+          <Link to="/">
+            <img
+              src={logo}
+              alt="Logo Vicky Games"
+              width="70%"
+              className="logo"
+            />
+          </Link>
         </Navbar.Brand>
         <Nav className="me-auto">
           <ul>
@@ -38,7 +46,7 @@ export default function  AppNavbar() {
             <li>Iniciar Sesion</li>
             <li>Registrarse</li>
             <li>
-              <Link to='/Cart'>
+              <Link to="/Cart">
                 <CartWidget />
               </Link>
             </li>

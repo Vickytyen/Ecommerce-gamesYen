@@ -5,7 +5,7 @@ import { Container } from "reactstrap"
 export default function ItemList({items}) {
     return (
       <Container>
-        <div>
+        <div className="ItemListDiv">
           {items.length > 0 ? (
             items.map((item) => (
               <Item
@@ -19,7 +19,7 @@ export default function ItemList({items}) {
               />
             ))
           ) : (
-            <p>Espere...</p> //meterle un spinner
+            <p>Espere...</p> 
           )}
         </div>
       </Container>

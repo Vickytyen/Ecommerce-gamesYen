@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 
 
 const CartWidget = () => {
-  const test = useContext(CartContext)  
+  const test = useContext(CartContext); //objeto en el CartContext.Provider
   return (
     <div>
       <svg
@@ -19,6 +19,8 @@ const CartWidget = () => {
       </svg>
       <Badge pill bg="dark">
         {test.calcItemsQty()}
+        {/*accede al contexto a traves del objeto "test" a la funcion global,
+         devuelve el numero de las cantidades de los items y se le asigna al badge*/}
       </Badge>
     </div>
   );

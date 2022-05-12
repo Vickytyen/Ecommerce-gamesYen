@@ -68,7 +68,7 @@ function Cart() {
                 variant="danger"
                 type="filled"
                 onClick={() => test.deleteItem(item.idItem)}>Delete</Button>
-              <div> $ {test.calcTotalPerItem(item.idItem)}</div>
+              <div>$ {test.calcTotalPerItem(item.idItem)}</div>
             </Card.Body>
           </Card>
         ))
