@@ -6,24 +6,25 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const addToCart = (item, qty) => {
-        //console.log(item, qty, 'ADDTOCART') 
-        let found = cartList.find((item) => item.idItem === item.id);
-        if ( found === undefined) {
+        let found = cartList.find((product) => product.idItem === item.idItem);
+        if ( found === undefined ) {
             setCartList([
                 ...cartList, //spread operator
                 {
-                    idItem: item.id,
+                    idItem: item.idItem,
                     imgItem: item.img,
                     nameItem: item.name,
                     priceItem: item.price,
                     qtyItem: qty
 
                 },
-                
             ])
-         //   console.log(cartList, qty, 'CARTLIST') 
+        
             } else {
             found.qtyItem += qty;
+            setCartList([
+                ...cartList
+            ]);
         }
     }
     
@@ -36,12 +37,13 @@ const CartContextProvider = ({ children }) => {
         setCartList(result);
     }
 
-    const calcTotalPerItem = (idItem) => { console.log(idItem, 'calc item')
+    const calcTotalPerItem = (idItem) => {
         let index = cartList.map(item => item.idItem).indexOf(idItem);
         return cartList[index].priceItem * cartList[index].qtyItem;
     }
 
     const calcSubTotal = () => {
+        console.log({cartList})
         let totalPerItem = cartList.map(item => calcTotalPerItem(item.idItem));
         return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue);
     }
@@ -57,6 +59,7 @@ const CartContextProvider = ({ children }) => {
     const calcItemsQty = () => {
         let qtys = cartList.map(item => item.qtyItem);
         return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+        
     }
 
 

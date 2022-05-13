@@ -19,7 +19,7 @@ export default function ItemList({items}) {
               />
             ))
           ) : (
-            <p>Espere...</p> 
+            <p>Please wait...</p>
           )}
         </div>
       </Container>

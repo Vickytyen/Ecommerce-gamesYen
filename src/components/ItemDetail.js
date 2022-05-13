@@ -11,7 +11,7 @@ const ItemDetail = ({item}) => {
   const test = useContext(CartContext);
     
   const onAdd = (qty) => {
-    alert("Seleccionó " + qty + " items");
+    alert("You've selected " + qty + " items");
     setItemCount(qty);
     test.addToCart(item, qty);
   }
@@ -28,7 +28,7 @@ const ItemDetail = ({item}) => {
                 {item.description}
               </CardSubtitle>
               <CardText>${item.price}</CardText>
-              <CardText>{item.stock}unidades</CardText>
+              <CardText>{item.stock} in stock</CardText>
               <div>
                 {itemCount === 0 ? (
                   <ItemCount 
@@ -40,14 +40,14 @@ const ItemDetail = ({item}) => {
                   <CheckOut />
                 )}
                 <Link to={"/"}>
-                  <Button>Home</Button>
+                  <Button className="menuButton">Home</Button>
                 </Link>
               </div>
             </CardBody>
           </Card>
         </div>
       ) : (
-        <p>Cargando...</p>
+        <p>Loading...</p>
       )}
     </>
   );

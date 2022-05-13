@@ -36,7 +36,7 @@ function Cart() {
         };
 
         const createOrderFb = async () => {
-          const newOrderRef = doc(collection(db, "order")); //crearlo en firebase, ver clase
+          const newOrderRef = doc(collection(db, "order"));
           await setDoc(newOrderRef, order);
           return newOrderRef;
         };
@@ -44,9 +44,8 @@ function Cart() {
         createOrderFb()
           .then(result => {
             alert(
-              "Tu pedido ha sido creado. Por favor anote el ID.\n\n\nID del pedido: " +
-                result.id +
-                "\n\n"
+              "Thanks for your purchase! Please take note of your order ID.\n\n\nID : " +
+                result.id +"\n\n"
             );
           })
           .catch((err) => console.log(err));
@@ -55,15 +54,15 @@ function Cart() {
         
   return (
     <>
-      <h1>Tu carrito</h1>
-      {test.cartList.length > 0 ? (
-        test.cartList.map((item) => (
+      <h1>Your Cart</h1>
+      {test.cartList.length > 0 && (
+        test.cartList.map((item) => (          
           <Card style={{ width: "18rem" }} key={item.idItem}>
             <Card.Img variant="top" src={item.imgItem} />
             <Card.Body>
               <Card.Title>{item.nameItem}</Card.Title>
-              <Card.Text>{item.priceItem} precio unitario</Card.Text>
-              <Card.Text>{item.qtyItem}item(s)</Card.Text>
+              <Card.Text>${item.priceItem} per each</Card.Text>
+              <Card.Text>{item.qtyItem} item(s)</Card.Text>
               <Button
                 variant="danger"
                 type="filled"
@@ -72,9 +71,7 @@ function Cart() {
             </Card.Body>
           </Card>
         ))
-      ) : (
-        <></>
-      )}
+      ) }
 
       <div>
         {test.cartList.length > 0 ? (
@@ -89,22 +86,22 @@ function Cart() {
       <div>
         {test.cartList.length > 0 && (
           <div>
-            <h1>Tu Compra</h1>
+            <h1>Summary</h1>
             <h2>Subtotal</h2>
             <p>{test.calcSubTotal()}</p>
-            <h3>Impuestos</h3>
+            <h3>Taxes</h3>
             <p>{test.calcTaxes()}</p>
-            <h3>Descuento</h3>
+            <h3>Tax discount</h3>
             <p>{-test.calcTaxes()}</p>
             <h2>Total</h2>
             <p>{test.calcTotal()}</p>
-            <button onClick={createNewOrder}>Checkout</button>
+            <button onClick={createNewOrder}>Checkout Now</button>
           </div>
         )}
       </div>
 
       <Link to={"/"}>
-        <Button>Back to Menu</Button>
+        <Button className="menuButton">Back to Menu</Button>
       </Link>
     </>
   );

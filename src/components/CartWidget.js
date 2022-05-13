@@ -9,9 +9,8 @@ const CartWidget = () => {
     <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
+        width="30"
+        height="25"
         className="bi bi-cart3"
         viewBox="0 0 16 16"
       >
@@ -19,8 +18,6 @@ const CartWidget = () => {
       </svg>
       <Badge pill bg="dark">
         {test.calcItemsQty()}
-        {/*accede al contexto a traves del objeto "test" a la funcion global,
-         devuelve el numero de las cantidades de los items y se le asigna al badge*/}
       </Badge>
     </div>
   );

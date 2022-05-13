@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
 .App {
   text-align: center;
 }
@@ -61,7 +63,33 @@ img {
   width: 150px;
   border-radius: 100%;
   margin-left: 20px ;
+}
 
+.category {
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  letter-spacing: 5px;
+  margin-left: 4rem;
+  margin-top: 4rem;
+  text-decoration: none;
+  font-family: 'Koulen', cursive;
+  font-size: larger;
+
+}
+
+ul li {
+  list-style: none;
+  margin-left: 10rem;
+  margin-right: 1rem;
+  font-family: 'Koulen', cursive;
+}
+
+h1 {
+  font-family: 'Koulen', cursive;
 }
 
 /*itemlist CSS*/
@@ -89,16 +117,27 @@ img {
 
 /*ItemCount CSS*/
 
-myButton {
-  border-radius: 100% ;
-  width: 50px;
-  height: 50px;
-  color: red;
-
+.itemCount {
+  display: flex;
+  align-items: center;
 }
 
-/*Navbar CSS*/
-li {
-text-decoration-line: none;
-list-style: none;
+.itemCount button {
+  font-size: 1em;
+  display: flex;
+  height: 2.5em;
+  margin: 0 1em;
+  padding: 0 1em;
+  border-radius: 100px;
+  background-color: rgb(198, 2, 2);
+  border: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  background-color: rgb(198, 2, 2);
 }

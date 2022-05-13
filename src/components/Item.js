@@ -10,7 +10,7 @@ export default function Item({id, tittle, price, img, stock, }) {
           <CardBody>
             <CardTitle tag="h5">{tittle}</CardTitle>
             <CardText>${price}</CardText>
-            <CardText>{stock} unidades</CardText>
+            <CardText>{stock} in stock</CardText>
             <Link to={`/item/${id}`}>
               <Button color="danger">+ info</Button>
             </Link>

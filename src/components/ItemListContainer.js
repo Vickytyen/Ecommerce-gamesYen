@@ -17,10 +17,10 @@ const ItemListContainer = () => {
 
 //componentWillUnmount  
     useEffect(() => {
-          return () => {
-            setGames([]);
-          };
-        }, []);
+      return () => {
+        setGames([]);
+      };
+    }, []);
 
   return (
     <>

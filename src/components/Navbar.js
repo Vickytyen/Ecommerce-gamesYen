@@ -12,7 +12,7 @@ export default function  AppNavbar() {
   return (
     <Container>
       <Navbar bg="danger" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <Link to="/">
             <img
               src={logo}
@@ -22,24 +22,16 @@ export default function  AppNavbar() {
             />
           </Link>
         </Navbar.Brand>
-        <Nav className="me-auto">
-          <ul>
-            <Nav.Link>
-              <li>
-                <Link to="/category/Nintendo">Nintendo</Link>
-              </li>
-            </Nav.Link>
-            <Nav.Link>
-              <li>
-                <Link to="/category/Playstation">Playstation</Link>
-              </li>
-            </Nav.Link>
-            <Nav.Link>
-              <li>
-                <Link to="/category/Xbox">Xbox</Link>
-              </li>
-            </Nav.Link>
-          </ul>
+        <Nav>
+          <Nav.Link className="category">
+            <Link to="/category/Nintendo">Nintendo</Link>
+          </Nav.Link>
+          <Nav.Link className="category">
+            <Link to="/category/Playstation">Playstation</Link>
+          </Nav.Link>
+          <Nav.Link className="category">
+            <Link to="/category/Xbox">Xbox</Link>
+          </Nav.Link>
         </Nav>
         <Nav>
           <ul>

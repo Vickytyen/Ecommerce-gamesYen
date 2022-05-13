@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     getItemFromFirebase(idItem)
-      .then((result) => setGames(result))
+      .then((result) => setGames(result)) 
       .catch((err) => console.log(err));
   }, [idItem]);
 
