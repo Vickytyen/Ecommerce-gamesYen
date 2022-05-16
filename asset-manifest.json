@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Ecommerce-gamesYen/static/css/main.dcdb8b99.css",
+    "main.js": "/Ecommerce-gamesYen/static/js/main.b8b2869e.js",
+    "static/js/787.ac919890.chunk.js": "/Ecommerce-gamesYen/static/js/787.ac919890.chunk.js",
+    "static/media/fondo2.jpg": "/Ecommerce-gamesYen/static/media/fondo2.e632b9de2f4da0b4addb.jpg",
+    "static/media/logo.jpg": "/Ecommerce-gamesYen/static/media/logo.d1f79fd724dc8b48d9e0.jpg",
+    "index.html": "/Ecommerce-gamesYen/index.html",
+    "main.dcdb8b99.css.map": "/Ecommerce-gamesYen/static/css/main.dcdb8b99.css.map",
+    "main.b8b2869e.js.map": "/Ecommerce-gamesYen/static/js/main.b8b2869e.js.map",
+    "787.ac919890.chunk.js.map": "/Ecommerce-gamesYen/static/js/787.ac919890.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcdb8b99.css",
+    "static/js/main.b8b2869e.js"
+  ]
+}
