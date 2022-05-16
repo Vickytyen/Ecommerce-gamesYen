@@ -17,10 +17,10 @@ function Cart() {
           qty: item.qtyItem,
         }));
 
-        test.cartList.forEach(async (item) => { // Cuando se confirma la compra, se actualiza el stock con updateDoc
+        test.cartList.forEach(async (item) => { // When purchase confirmed, the stock is updated by updateDoc
           const itemRef = doc(db, "products", item.idItem);
           await updateDoc(itemRef, {
-            stock: increment(-item.qtyItem), // funcion para modificar el stock desde firebase
+            stock: increment(-item.qtyItem), // function to modify the stock from firebase
           });
         });
 
@@ -55,53 +55,57 @@ function Cart() {
   return (
     <>
       <h1>Your Cart</h1>
-      {test.cartList.length > 0 && (
-        test.cartList.map((item) => (          
-          <Card style={{ width: "18rem" }} key={item.idItem}>
-            <Card.Img variant="top" src={item.imgItem} />
-            <Card.Body>
-              <Card.Title>{item.nameItem}</Card.Title>
-              <Card.Text>${item.priceItem} per each</Card.Text>
-              <Card.Text>{item.qtyItem} item(s)</Card.Text>
-              <Button
-                variant="danger"
-                type="filled"
-                onClick={() => test.deleteItem(item.idItem)}>Delete</Button>
-              <div>$ {test.calcTotalPerItem(item.idItem)}</div>
-            </Card.Body>
-          </Card>
-        ))
-      ) }
-
-      <div>
-        {test.cartList.length > 0 ? (
-          <Button type="filled" onClick={test.removeList}>
-            Delete All
-          </Button>
-        ) : (
-          <Card.Text>Your Cart is empty</Card.Text>
-        )}
+      <div className="cart">
+        {test.cartList.length > 0 &&
+          test.cartList.map((item) => (
+            <Card style={{ width: "18rem" }} key={item.idItem}>
+              <Card.Img variant="top" src={item.imgItem} />
+              <Card.Body>
+                <Card.Title>{item.nameItem}</Card.Title>
+                <Card.Text>${item.priceItem} each</Card.Text>
+                <Card.Text>{item.qtyItem} item(s)</Card.Text>
+                <Button
+                  color="danger"
+                  type="filled"
+                  onClick={() => test.deleteItem(item.idItem)}
+                >
+                  Delete
+                </Button>
+                <div>
+                  <b>Total ${test.calcTotalPerItem(item.idItem)}</b>
+                </div>
+              </Card.Body>
+            </Card>
+          ))}
       </div>
 
       <div>
         {test.cartList.length > 0 && (
-          <div>
-            <h1>Summary</h1>
+          <div className="summary">
+            <h2>Summary</h2>
             <h2>Subtotal</h2>
-            <p>{test.calcSubTotal()}</p>
+            <p>$ {test.calcSubTotal()}</p>
             <h3>Taxes</h3>
-            <p>{test.calcTaxes()}</p>
+            <p>$ {test.calcTaxes()}</p>
             <h3>Tax discount</h3>
-            <p>{-test.calcTaxes()}</p>
+            <p>$ {-test.calcTaxes()}</p>
             <h2>Total</h2>
-            <p>{test.calcTotal()}</p>
+            <p>$ {test.calcTotal()}</p>
             <button onClick={createNewOrder}>Checkout Now</button>
           </div>
         )}
       </div>
-
+      <div>
+        {test.cartList.length > 0 ? (
+          <Button color="danger" onClick={test.removeList}>
+            Delete All
+          </Button>
+        ) : (
+          <Card.Text className="emptyCart">Your Cart is empty</Card.Text>
+        )}
+      </div>
       <Link to={"/"}>
-        <Button className="menuButton">Back to Menu</Button>
+        <Button color="dark">Back to Menu</Button>
       </Link>
     </>
   );

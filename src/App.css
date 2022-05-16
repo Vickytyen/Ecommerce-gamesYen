@@ -75,10 +75,14 @@ img {
   letter-spacing: 5px;
   margin-left: 4rem;
   margin-top: 4rem;
-  text-decoration: none;
   font-family: 'Koulen', cursive;
   font-size: larger;
 
+}
+
+.category a { 
+  text-decoration: none;
+  color:antiquewhite;
 }
 
 ul li {
@@ -90,6 +94,12 @@ ul li {
 
 h1 {
   font-family: 'Koulen', cursive;
+  margin-top: 150px;
+  margin-left: 45% ;
+}
+
+.font {
+    font-family: 'Koulen', cursive;
 }
 
 /*itemlist CSS*/
@@ -136,8 +146,29 @@ h1 {
   align-items: center;
 }
 
-.menuButton {
-  display: flex;
-  align-items: center;
-  background-color: rgb(198, 2, 2);
+/*CART CSS*/
+
+.cart {
+    display: flex;
+    justify-content: space-evenly ;
+    font-size: 1.2em;
+    font-weight: 400;
 }
+
+.summary{
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke ;
+  margin: 1.5em 40em;
+  padding: 0.5em 1.5em 2em 1.5em;
+  border: solid;
+  align-items: center;
+  font-family: 'Koulen';
+  }
+
+  .emptyCart {
+  display: flex;
+  justify-content:center;
+  color: black;
+  font-size: 2rem;
+  }

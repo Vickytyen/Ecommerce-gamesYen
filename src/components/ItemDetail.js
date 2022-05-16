@@ -1,7 +1,6 @@
 import ItemCount from "./ItemCount";
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import CheckOut from "./CheckOut";
 import { CartContext } from "../context/CartContext";
 
@@ -27,7 +26,7 @@ const ItemDetail = ({item}) => {
               <CardSubtitle className="mb-2 text-muted" tag="h6">
                 {item.description}
               </CardSubtitle>
-              <CardText>${item.price}</CardText>
+              <CardText><b>${item.price}</b></CardText>
               <CardText>{item.stock} in stock</CardText>
               <div>
                 {itemCount === 0 ? (
@@ -37,11 +36,8 @@ const ItemDetail = ({item}) => {
                     onAdd={onAdd}
                   />
                 ) : (
-                  <CheckOut />
+                  <CheckOut/>
                 )}
-                <Link to={"/"}>
-                  <Button className="menuButton">Home</Button>
-                </Link>
               </div>
             </CardBody>
           </Card>

@@ -7,7 +7,7 @@ function CheckOut() {
   return (
     <>
       <Link to="/Cart" >
-        <Button color="primary" outline>
+        <Button color="danger" outline>
           Check Out
         </Button>
       </Link>

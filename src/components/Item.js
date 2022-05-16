@@ -9,7 +9,7 @@ export default function Item({id, tittle, price, img, stock, }) {
           <CardImg alt="Card image cap" src={img} top width="100%" className="ItemSize" />
           <CardBody>
             <CardTitle tag="h5">{tittle}</CardTitle>
-            <CardText>${price}</CardText>
+            <CardText><b>${price}</b></CardText>
             <CardText>{stock} in stock</CardText>
             <Link to={`/item/${id}`}>
               <Button color="danger">+ info</Button>
