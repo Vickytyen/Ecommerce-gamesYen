@@ -1,3 +1,55 @@
+
+# Final Project in React Js :rocket:
+_FInal Project form course React Js at CoderHouse :mortar_board:_
+
+An E-commerce of my favourites games throught the years. Sort by brand's names categories, each game has it own detail card with information of the selected item (game, description, price and quantity in stock) wich the user can add it to the cart, and keep shopping by clicking at "Back to Menu" button. 
+Once confirmed the purchase, clicking at "checkout now" will generate an order ID for the user to keep for purchase reference.
+
+## User flow :man_dancing:
+![alt text](https://github.com/Vickytyen/Ecommerce-gamesYen/blob/master/src/img/react.gif)
+
+(1. Upload .GIF file to github repository.
+ 2. Add it to Readme file: ![alt text](insert here URL of github deployed GIF)
+ 
+## Development :hammer_and_wrench:
+react v.17.0.2
+
+react-dom v.17.0.2
+
+react-router-dom v.6.3.0
+
+
+## Styling :crayon:
+bootstrap": v.5.1.3
+
+react-bootstrap": v.2.2.2
+
+reactstrap": v.9.0.1
+
+## Backend :gear:
+firebase v.9.7.0
+
+## Deployment :computer:
+
+Deployed by Github Pages
+
+1. Add a "homepage" in file package.json http://username.github.io/projectname
+2. Add scripts: "build": "react-scripts build", "deploy": "gh-pages -d build"
+3. Run the scripts: npm run bluid, npm run deploy
+
+## Copyright 	:alien:
+_I do not own the authorship of the images used for this project. This website is uploaded to github pages, it is for academic and non-profit use only._
+
+# Author
+Victoria Yen
+
+:sparkling_heart:
+
+
+
+
+# ABOUT REACT JS
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
